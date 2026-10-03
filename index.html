@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lau & Augusto · 03.10.2026</title>
+<meta name="description" content="Hoy nos casamos. Estación Fátima Eventos, 17:00 en punto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#F1ECE3;--ink:#1E1B17;--soft:#6B6358;--gold:#B4955A;--line:#DDD4C4;--card:#F8F5EF}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:"Jost",system-ui,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  main{max-width:560px;margin:0 auto;padding:calc(56px + env(safe-area-inset-top)) 24px calc(56px + env(safe-area-inset-bottom))}
+  .hero{text-align:center;padding-bottom:40px}
+  .today{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;color:var(--gold)}
+  h1{font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(52px,15vw,84px);line-height:1;letter-spacing:-.01em;margin:10px 0 14px}
+  h1 span{font-style:italic;color:var(--gold);font-weight:400}
+  .date{letter-spacing:.3em;font-size:14px;color:var(--soft)}
+  section{border-top:1px solid var(--line);padding:36px 0}
+  h2{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:30px;line-height:1.15;margin-bottom:14px}
+  p{color:var(--soft)}
+  p strong{color:var(--ink);font-weight:500}
+  .btn{display:inline-block;margin-top:18px;background:var(--gold);color:#fff;text-decoration:none;padding:13px 24px;border-radius:999px;font-weight:500;font-size:15px}
+  .btn:focus-visible,.copy:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+  .acct{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-top:16px}
+  .acct h3{font-family:"Cormorant Garamond",serif;font-weight:500;font-size:22px;margin-bottom:10px}
+  .row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 0;border-top:1px solid var(--line)}
+  .row:first-of-type{border-top:0}
+  .k{font-size:13px;color:var(--soft)}
+  .v{font-weight:500;word-break:break-all}
+  .copy{flex:none;background:none;border:1px solid var(--gold);color:var(--gold);border-radius:999px;padding:6px 14px;font:inherit;font-size:13px;cursor:pointer}
+  .copy.ok{background:var(--gold);color:#fff}
+  .note{font-size:13px;margin-top:8px}
+  footer{text-align:center;padding-top:28px;color:var(--soft);font-size:14px}
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <p class="today">Hoy es el día</p>
+    <h1>Lau <span>&amp;</span> Augusto</h1>
+    <p class="date">03.10.2026</p>
+  </header>
+
+  <section>
+    <h2>Estación Fátima Eventos</h2>
+    <p><strong>Arrancamos 17:00 en punto</strong>, ¡no llegues tarde!<br>
+    Ceremonia y fiesta, todo en el mismo lugar.<br>
+    Fátima, Pilar, Buenos Aires.<br>
+    Dress code: elegante.</p>
+    <a class="btn" href="https://maps.app.goo.gl/X4PWvnGCMxxcviBv5" target="_blank" rel="noopener">Abrir en Google Maps</a>
+  </section>
+
+  <section>
+    <h2>Regalos</h2>
+    <p>El mejor regalo es que vengas. Ahora… si insistís:</p>
+
+    <div class="acct">
+      <h3>Pesos (AR)</h3>
+      <div class="row"><div><div class="k">Alias</div><div class="v">lauyaugusto.pesos</div></div><button class="copy" data-c="lauyaugusto.pesos">Copiar</button></div>
+      <div class="row"><div><div class="k">CVU</div><div class="v">0000003100004136883449</div></div><button class="copy" data-c="0000003100004136883449">Copiar</button></div>
+      <div class="row"><div><div class="k">Titular</div><div class="v">Maria Laura Pintado</div></div></div>
+    </div>
+
+    <div class="acct">
+      <h3>Dólares (USD)</h3>
+      <div class="row"><div><div class="k">Alias</div><div class="v">tono.pausadas.rebajo</div></div><button class="copy" data-c="tono.pausadas.rebajo">Copiar</button></div>
+      <div class="row"><div><div class="k">CBU</div><div class="v">3220001888098203190013</div></div><button class="copy" data-c="3220001888098203190013">Copiar</button></div>
+      <div class="row"><div><div class="k">Titular</div><div class="v">Maria Laura Pintado</div></div></div>
+      <p class="note">El destino aparece como Banco Industrial (BIND).</p>
+    </div>
+  </section>
+
+  <footer>#LauYAugusto<br>Hecho con amor por Jesi</footer>
+</main>
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var t=b.dataset.c;
+    var done=function(){b.textContent='Copiado';b.classList.add('ok');setTimeout(function(){b.textContent='Copiar';b.classList.remove('ok')},1800)};
+    if(navigator.clipboard){navigator.clipboard.writeText(t).then(done,function(){prompt('Copiá:',t)})}else{prompt('Copiá:',t)}
+  });
+});
+</script>
+</body>
+</html>
